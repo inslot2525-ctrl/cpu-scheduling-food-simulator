@@ -8,6 +8,10 @@ This simulator demonstrates CPU scheduling algorithms using food orders as an an
 - Kitchen = CPU
 - Priority = Process Priority
 """
+import sys
+if sys.stdout.encoding and sys.stdout.encoding.lower() != 'utf-8':
+    sys.stdout.reconfigure(encoding='utf-8')
+
 from scheduler_engine import Order, run_fcfs, run_sjf, run_priority, run_round_robin
 from metrics import PerformanceMetrics, compare_algorithms
 from visualization import show_dashboard, Dashboard
@@ -34,7 +38,7 @@ def run_simulation():
     # Create sample orders
     orders = create_sample_orders()
     
-    print("\n📋 INITIAL ORDERS:")
+    print("\nINITIAL ORDERS:")
     print("-" * 50)
     for order in orders:
         print(f"  {order.name:<10} | Arrival: {order.arrival_time} | "
@@ -116,7 +120,7 @@ def interactive_mode():
             
             orders.append(Order(order_id, name, arrival, prep_time, priority))
             order_id += 1
-            print(f"✓ Added: {name}")
+            print(f"[+] Added: {name}")
         except ValueError:
             print("Invalid input. Please enter numbers for time values.")
             continue
@@ -168,8 +172,6 @@ def interactive_mode():
 
 
 if __name__ == "__main__":
-    import sys
-    
     if len(sys.argv) > 1 and sys.argv[1] == '--interactive':
         interactive_mode()
     else:

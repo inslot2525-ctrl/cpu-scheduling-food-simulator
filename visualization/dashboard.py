@@ -135,7 +135,7 @@ class Dashboard:
         output.append("═" * 70)
         
         # Determine best algorithm for each metric
-        output.append("\n🏆 BEST PERFORMERS:")
+        output.append("\nBEST PERFORMERS:")
         output.append("─" * 40)
         
         for label, key in metric_keys:
