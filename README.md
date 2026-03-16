@@ -170,3 +170,13 @@ Designed to help students understand:
 - Operating system fundamentals
 
 Suitable for Operating Systems courses and self-study.
+
+WORK DISTRIBUTION (MID-SEM) - 
+
+scheduler_engine/
+
+fcfs.py- AMBOY
+order.py- GUPTA
+priority.py - BAKSHI
+round_robin.py - AYUSH
+sjf.py - ADITYA 
